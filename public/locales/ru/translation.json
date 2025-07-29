@@ -1,0 +1,6 @@
+{
+	"Exmaple": {
+		"welcome" : "Добро пожаловать в React с i18next",
+		"language" : "Язык"
+	}
+}

@@ -1,0 +1,14 @@
+#app {
+  height: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.bgimage{
+  background-image: url(../../../../shared/Ellipse_23.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
