@@ -13,6 +13,18 @@ import LogIn from './pages/auth/LogIn'
 import SignUp from './pages/auth/SignUp'
 import Account from './pages/auth/Account'
 import NotFoundPage from './pages/protected/NotFoundPage/NotFoundPage'
+import Layout2 from '../../../../Exam2/my-app/src/app/pages/protected/layout/layout'
+import LogIn2 from '../../../../Exam2/my-app/src/app/pages/auth/log/logIn'
+import Orders from '../../../../Exam2/my-app/src/app/pages/protected/Orders/Orders'
+import Others from '../../../../Exam2/my-app/src/app/pages/protected/Other/Others'
+import Dashboard from '../../../../Exam2/my-app/src/app/pages/protected/Dashboard/Dashboard'
+import Products from '../../../../Exam2/my-app/src/app/pages/protected/Products/Products'
+import Categories from '../../../../Exam2/my-app/src/app/pages/protected/Other/Categories'
+import SubCategory from '../../../../Exam2/my-app/src/app/pages/protected/Other/SubCategory'
+import Brand from '../../../../Exam2/my-app/src/app/pages/protected/Other/Brand'
+import AddProduct from '../../../../Exam2/my-app/src/app/pages/protected/Products/addProduct'
+import EditProduct from '../../../../Exam2/my-app/src/app/pages/protected/Products/EditProduct'
+
 
 const App = () => {
 	const router = createBrowserRouter([
@@ -69,6 +81,54 @@ const App = () => {
 					element: <NotFoundPage />,
 				},
 			],
+		},
+		{
+			path: '/admin',
+			element: <Layout2 />,
+			children: [
+				{
+					index: true,
+					element: <Dashboard />,
+				},
+				{
+					path: 'log-in',
+					element: <LogIn2 />,
+				},
+				{
+					path: 'orders',
+					element: <Orders />,
+				},
+				{
+					path: 'others',
+					element: <Others />,
+					children:[
+						{
+							index:true,
+							element:<Categories/>
+						},
+						{
+							path:'brands',
+							element:<Brand/>
+						},
+						{
+							path:'sub-categoty',
+							element:<SubCategory/>
+						}
+					]
+				},
+				{
+					path: 'products',
+					element: <Products />,
+				},
+				{
+					path:'add-new-product',
+					element: <AddProduct/>
+				},
+				{
+					path:'edit-product/:id',
+					element: <EditProduct/>
+				},
+			]
 		},
 	])
 	return <RouterProvider router={router} />

@@ -108,7 +108,7 @@ const Layout = () => {
 			)}
 			<div
 				onClick={() => setBars(false)}
-				className={`fixed top-[0px] left-[0px] md:hidden h-[100vh] z-[300099000] backdrop-blur-xs w-[100%] ${
+				className={`fixed top-[72.8px] left-[0px] md:hidden h-[100vh] z-[300099000] backdrop-blur-xs w-[100%] ${
 					bars ? 'flex' : 'hidden'
 				}`}
 			></div>
@@ -119,8 +119,8 @@ const Layout = () => {
 				}`}
 			></div>
 			<div
-				className={`fixed w-[40%] md:hidden top-[0px] left-[0px] z-[1000000001]  ${
-					bars ? 'flex' : 'hidden'
+				className={`fixed w-[35%] flex md:hidden top-[72.8px] duration-700 z-[1000000001]  ${
+					bars ? 'right-[65%]' : 'right-[100%]'
 				} bg-white h-[100vh] flex-col py-[20px] border border-[#0000004D] gap-[32px]`}
 			>
 				<Link
@@ -307,7 +307,7 @@ const Layout = () => {
 							<img src={CartIco} alt='' />
 							<div className='w-[20px] flex justify-center items-center absolute ml-[12px] top-[17px]  h-[20px] bg-[#DB4444] rounded-full'>
 								<p className='text-white text-[14px]'>
-									{data?.data[0]?.productsInCart?.length}
+									{data?.data[0]?.productsInCart?.length ? data?.data[0]?.productsInCart?.length : "0"}
 								</p>
 							</div>
 						</div>

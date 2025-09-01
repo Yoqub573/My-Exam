@@ -6,6 +6,8 @@ export const useUserId = () => {
 
 	try {
 		const decoded = jwtDecode(token)
+		console.log(decoded);
+		
 		return decoded?.sid || null
 	} catch (error) {
 		console.error(error)
