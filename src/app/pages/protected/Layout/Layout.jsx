@@ -126,7 +126,7 @@ const Layout = () => {
 				<Link
 					className='px-[20px] flex gap-[10px] items-center'
 					onClick={() => setBars(!bars)}
-					to={'/'}
+					to={'/'} 
 				>
 					<img className='w-[30px] h-[30px]' src={Home} alt='' />
 					<p
